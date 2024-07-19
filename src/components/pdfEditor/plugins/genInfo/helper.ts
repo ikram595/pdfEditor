@@ -13,20 +13,7 @@ import {
   VERTICAL_ALIGN_BOTTOM,
 } from "../defaultText/constants";
 import { HEX_COLOR_PATTERN } from "../../constants";
-const getBoxDimensionProp = (step = 1) => {
-  const getCommonProp = () => ({
-    type: "number",
-    widget: "inputNumber",
-    props: { min: 0, step },
-    span: 6,
-  });
-  return {
-    top: { title: "Top", ...getCommonProp() },
-    right: { title: "Right", ...getCommonProp() },
-    bottom: { title: "Bottom", ...getCommonProp() },
-    left: { title: "Left", ...getCommonProp() },
-  };
-};
+
 export const getDefaultCellStyles = () => ({
   fontName: undefined,
   alignment: DEFAULT_ALIGNMENT,
@@ -36,23 +23,23 @@ export const getDefaultCellStyles = () => ({
   characterSpacing: DEFAULT_CHARACTER_SPACING,
   fontColor: DEFAULT_FONT_COLOR,
   backgroundColor: "",
-
-  /* borderColor: "#888888",
-  borderWidth: { top: 0.1, bottom: 0.1, left: 0.1, right: 0.1 },
-  padding: { top: 5, bottom: 5, left: 5, right: 5 }, */
 });
 export const getDefaultFieldsVals = () => ({
-  name: {
-    value: "Enter your name",
-    fontName: undefined,
-    fontSize: DEFAULT_FONT_SIZE,
-    fontColor: DEFAULT_FONT_COLOR,
+  organization: {
+    value: "Organization Name",
+    fontName: "Helvetica",
+    fontSize: 20,
+    fontColor: "#000000",
+    opacity: 1,
+    rotation: 0,
   },
-  age: {
-    value: "0",
-    fontName: undefined,
-    fontSize: DEFAULT_FONT_SIZE,
-    fontColor: DEFAULT_FONT_COLOR,
+  taskDescription: {
+    value: "Task Description",
+    fontName: "Helvetica",
+    fontSize: 20,
+    fontColor: "#000000",
+    opacity: 1,
+    rotation: 0,
   },
 });
 export const getCellPropPanelSchema = (arg: {
@@ -114,25 +101,14 @@ export const getCellPropPanelSchema = (arg: {
       },
       span: 8,
     },
-    /* lineHeight: {
-      title: i18n("schemas.text.lineHeight"),
-      type: "number",
-      widget: "inputNumber",
-      props: { step: 0.1, min: 0 },
-      span: 8,
-    }, */
+
     fontColor: {
       title: i18n("schemas.textColor"),
       type: "string",
       widget: "color",
       rules: [{ pattern: HEX_COLOR_PATTERN, message: i18n("hexColorPrompt") }],
     },
-    /* borderColor: {
-      title: i18n("schemas.borderColor"),
-      type: "string",
-      widget: "color",
-      rules: [{ pattern: HEX_COLOR_PATTERN, message: i18n("hexColorPrompt") }],
-    }, */
+
     backgroundColor: {
       title: i18n("schemas.backgroundColor"),
       type: "string",
@@ -151,10 +127,10 @@ export const getCellPropPanelSchema = (arg: {
           },
         }
       : {}),
-    "-": { type: "void", widget: "Divider" },
+    /* "-": { type: "void", widget: "Divider" },
     name: {
       title: "name",
-      type: "string",
+      type: "textArea",
       widget: "lineTitle",
       span: 24,
     },
@@ -164,21 +140,6 @@ export const getCellPropPanelSchema = (arg: {
       widget: "inputNumber",
       props: { step: 1, min: 0 },
       span: 24,
-    },
-    /* borderWidth: {
-      title: i18n("schemas.borderWidth"),
-      type: "object",
-      widget: "lineTitle",
-      span: 24,
-      properties: getBoxDimensionProp(0.1),
-    }, */
-    "--": { type: "void", widget: "Divider" },
-    /* padding: {
-      title: i18n("schemas.padding"),
-      type: "object",
-      widget: "lineTitle",
-      span: 24,
-      properties: getBoxDimensionProp(),
     }, */
   };
 };

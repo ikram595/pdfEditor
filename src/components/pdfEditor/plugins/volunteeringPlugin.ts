@@ -174,6 +174,7 @@ export const volunteerBlock: Plugin<VolunteerSchema> = {
             },
           },
         ],
+        content:
       },
     });
   },

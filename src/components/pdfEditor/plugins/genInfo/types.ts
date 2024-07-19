@@ -17,26 +17,6 @@ export interface CellStyle {
   characterSpacing: number;
   fontColor: string;
   backgroundColor: string;
-  /*borderColor: string;
-   borderWidth: BoxDimensions;
-  padding: BoxDimensions; */
 }
 
-interface GeneralInfo {
-  name: FieldProperties;
-  age: FieldProperties;
-  content: ContentInput;
-}
-interface ContentInput {
-  body: string[][];
-  head: string[][];
-  columns: number[];
-}
-interface FieldProperties {
-  value: string;
-  fontName?: string;
-  fontSize: number;
-  fontColor: string;
-}
-export type GenSchema = Schema & CellStyle & GeneralInfo;
-/* export type CellSchema = Schema & CellStyle; */
+export type GenSchema = Schema & CellStyle;

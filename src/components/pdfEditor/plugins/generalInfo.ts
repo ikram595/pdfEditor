@@ -6,41 +6,15 @@ import {
   UIRenderProps,
   getFallbackFontName,
 } from "@pdfme/common";
-import { PDFDocument, rgb } from "pdf-lib";
-import { image, text } from "@pdfme/schemas";
 import { uiRender as textUiRender } from "./defaultText/uiRender.js";
 import { pdfRender as textPdfRender } from "./defaultText/pdfRender.js";
-import { ALIGNMENT } from "./defaultText/types.js";
 import type { GenSchema } from "./genInfo/types.js";
 import {
   getCellPropPanelSchema,
   getDefaultCellStyles,
   getDefaultFieldsVals,
 } from "./genInfo/helper.js";
-/* interface GeneralInfoSchema extends Schema {
-  generalInfo: GeneralInfo;
-}
 
-interface GeneralInfo {
-  firstName: FieldProperties;
-  lastName: FieldProperties;
-  country: FieldProperties;
-  email: FieldProperties;
-  github: FieldProperties;
-  language: FieldProperties;
-  linkedIn: FieldProperties;
-  phoneNumber: FieldProperties;
-}
-
-interface FieldProperties {
-  value: string;
-  fontName: string;
-  fontSize: number;
-  fontColor: string;
-  opacity: number;
-  rotation: number;
-}
- */
 const createTextDiv = (schema: GenSchema) => {
   const { width, height } = schema;
   const textDiv = document.createElement("div");
@@ -49,8 +23,6 @@ const createTextDiv = (schema: GenSchema) => {
   textDiv.style.zIndex = "1";
   textDiv.style.width = `${width}mm`;
   textDiv.style.height = `${height}mm`;
-  /* textDiv.style.top = `${bw.top + pd.top}mm`;
-  textDiv.style.left = `${bw.left + pd.left}mm`; */
   return textDiv;
 };
 export const generalInfoBlock: Plugin<GenSchema> = {
@@ -84,25 +56,6 @@ export const generalInfoBlock: Plugin<GenSchema> = {
       rootElement: textDiv,
     });
     rootElement.appendChild(textDiv);
-    // Block title
-    const titleElement = document.createElement("div");
-    titleElement.textContent = "General Information";
-    titleElement.style.fontWeight = "bold";
-    titleElement.style.fontSize = "22px";
-    titleElement.style.marginBottom = "5px";
-    rootElement.appendChild(titleElement);
-    /* //form fields
-    const fieldElement = document.createElement("div");
-    fieldElement.textContent = "First Name";
-    fieldElement.style.fontSize = "18px";
-    fieldElement.style.marginBottom = "5px";
-    rootElement.appendChild(fieldElement);
-    //secondFizld
-    const secondFieldElement = document.createElement("div");
-    secondFieldElement.textContent = "age";
-    secondFieldElement.style.fontSize = "18px";
-    secondFieldElement.style.marginBottom = "5px";
-    rootElement.appendChild(secondFieldElement); */
   },
   propPanel: {
     schema: ({ options, i18n }) => {
@@ -114,7 +67,7 @@ export const generalInfoBlock: Plugin<GenSchema> = {
       return getCellPropPanelSchema({ i18n, fontNames, fallbackFontName });
     },
     defaultSchema: {
-      type: "cell",
+      type: "text",
       icon: `<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="15.000000pt" height="15.000000pt" viewBox="0 0 512.000000 512.000000"
       preserveAspectRatio="xMidYMid meet">
@@ -137,9 +90,8 @@ export const generalInfoBlock: Plugin<GenSchema> = {
       content: "Type Something...",
       position: { x: 0, y: 0 },
       width: 180,
-      height: 90,
+      height: 50,
       ...getDefaultCellStyles(),
-      ...getDefaultFieldsVals(),
     },
   },
 };

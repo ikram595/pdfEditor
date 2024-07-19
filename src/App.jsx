@@ -5,8 +5,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<PdfEditor />} />
+
         {/* 
-        <Route path="/editor/:id" element={TemplateEditor} /> */}
+        <Route path="/editorMain" element={TemplateEditor} /> */}
       </Routes>
     </Router>
   );

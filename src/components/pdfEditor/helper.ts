@@ -123,11 +123,7 @@ export const getPlugins = () => {
     Rectangle: rectangle,
     Ellipse: ellipse,
     Image: image,
-    ReadOnlyImage: readOnlyImage,
-    SVG: svg,
-    ReadOnlySvg: readOnlySvg,
     QR: barcodes.qrcode,
-    Code128: barcodes.code128,
     volunteerBlock: volunteerBlock,
   };
 };

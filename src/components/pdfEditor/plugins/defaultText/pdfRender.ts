@@ -18,6 +18,7 @@ import {
   DEFAULT_LINE_HEIGHT,
   DEFAULT_CHARACTER_SPACING,
   DEFAULT_FONT_COLOR,
+  DEAFULT_CONTENT,
 } from "./constants.js";
 import {
   calculateDynamicFontSize,

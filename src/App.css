@@ -1,0 +1,45 @@
+/* src/App.css */
+.app {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.editor {
+  flex: 1;
+  position: relative; /* Added to support absolute positioning */
+  padding: 10px;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.pdf-viewer {
+  width: 40%;
+  padding: 10px;
+  border-left: 1px solid #ddd;
+}
+
+.controls {
+  padding: 10px;
+}
+
+.personal-info {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+canvas {
+  flex: 1;
+  border: 1px solid #ddd;
+}
+.App {
+  text-align: center;
+  width: 95%;
+  margin: 15px auto;
+}
