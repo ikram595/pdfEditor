@@ -65,7 +65,7 @@ export const volunteerBlock: Plugin<VolunteerSchema> = {
         fieldElement.contentEditable = mode !== "viewer" ? "true" : "false";
         fieldElement.style.border = "1px solid #ddd";
         fieldElement.style.padding = "3px";
-        fieldElement.style.fontSize = `${field.fontSize || 12}px`;
+        fieldElement.style.fontSize = `${field.fontSize || 22}px`;
         fieldElement.style.color = field.fontColor || "black";
         fieldElement.style.opacity =
           field.opacity !== undefined ? field.opacity.toString() : "1";
@@ -174,7 +174,6 @@ export const volunteerBlock: Plugin<VolunteerSchema> = {
             },
           },
         ],
-        content:
       },
     });
   },
@@ -242,7 +241,7 @@ export const volunteerBlock: Plugin<VolunteerSchema> = {
           organization: {
             value: "Organization Name",
             fontName: "Helvetica",
-            fontSize: 12,
+            fontSize: 22,
             fontColor: "#000000",
             opacity: 1,
             rotation: 0,
@@ -250,7 +249,7 @@ export const volunteerBlock: Plugin<VolunteerSchema> = {
           taskDescription: {
             value: "Task Description",
             fontName: "Helvetica",
-            fontSize: 12,
+            fontSize: 22,
             fontColor: "#000000",
             opacity: 1,
             rotation: 0,

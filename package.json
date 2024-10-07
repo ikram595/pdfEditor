@@ -13,9 +13,14 @@
     "@pdfme/common": "^4.0.2",
     "@pdfme/generator": "^4.0.2",
     "@pdfme/ui": "^4.0.2",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.1"
+    "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

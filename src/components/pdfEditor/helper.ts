@@ -21,6 +21,7 @@ import {
 } from "@pdfme/schemas";
 import { generalInfoBlock } from "./plugins/generalInfo";
 import { volunteerBlock } from "./plugins/volunteeringPlugin";
+import { footerBlock } from "./plugins/footerPlugin";
 const fontObjList = [
   {
     fallback: true,
@@ -125,6 +126,7 @@ export const getPlugins = () => {
     Image: image,
     QR: barcodes.qrcode,
     volunteerBlock: volunteerBlock,
+    footerBlock: footerBlock,
   };
 };
 

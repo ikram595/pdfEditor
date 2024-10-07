@@ -1,0 +1,32 @@
+.editor {
+  display: flex;
+}
+.sidebar {
+  padding: 20px;
+  background: #252627;
+  color: rgb(200, 191, 191);
+  min-height: 100vh;
+}
+.toolbar {
+  display: flex;
+  background: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+.dropZone {
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  min-height: 100vh;
+}
+.hide-arrows::-webkit-outer-spin-button,
+.hide-arrows::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide up/down arrows in Firefox */
+.hide-arrows[type="number"] {
+  -moz-appearance: textfield;
+}
